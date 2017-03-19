@@ -1,0 +1,22 @@
+<svg width="401px" height="263px" viewBox="744 516 401 263" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="46.1609349%" cy="50%" fx="46.1609349%" fy="50%" r="89.4506697%" id="radialGradient-1">
+            <stop stop-color="#A0A0A0" offset="0%"></stop>
+            <stop stop-color="#9A857A" offset="100%"></stop>
+        </radialGradient>
+        <rect id="path-2" x="0" y="0" width="398.636719" height="263"></rect>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="398.636719" height="263" fill="white">
+            <use xlink:href="#path-2"></use>
+        </mask>
+    </defs>
+    <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(746.000000, 516.000000)">
+        <use id="Rectangle" stroke="#A0A0A0" mask="url(#mask-3)" stroke-width="2" fill="url(#radialGradient-1)" xlink:href="#path-2"></use>
+        <ellipse id="Oval-2" stroke="#979797" fill="#D8D8D8" cx="194.5" cy="145.5" rx="43.5" ry="43.5"></ellipse>
+        <ellipse id="Oval" fill="#E16123" transform="translate(185.144634, 148.846743) rotate(-30.000000) translate(-185.144634, -148.846743) " cx="185.144634" cy="148.846743" rx="15.0956196" ry="28.7340261"></ellipse>
+        <ellipse id="Oval" fill="#E16123" transform="translate(204.440203, 148.432206) rotate(30.000000) translate(-204.440203, -148.432206) " cx="204.440203" cy="148.432206" rx="15.0956196" ry="28.7340261"></ellipse>
+        <polyline id="Path-3" stroke="#D8D8D8" stroke-width="2" points="237.541683 142.098195 252.727912 61.9433706 255.302321 192.251592 268.160429 131.918006 273.118723 169.85699 289.954619 53.1948421 304.829502 178.768619 315.159669 114.516091 322.018565 184.11469 340.968823 98.6137948 350.058254 169.598748 358.682991 113.002881 372.019734 175.189469 388.79522 68.7935907 396.541683 121.316475"></polyline>
+        <polyline id="Path-2" stroke="#D8D8D8" stroke-width="2" points="159 165.649013 150.196013 118.854639 131.608596 193.812051 117.170058 61.8411805 113.989618 162.172822 111.293397 119.758056 89.8887043 190.925045 79.2468854 59 57.8421927 191.717172 45.3515365 128.83805 24.9262874 184.22143 30.6818937 88.8193024 0 199.029611 3.9067691 91.9223428"></polyline>
+    </g>
+</svg>

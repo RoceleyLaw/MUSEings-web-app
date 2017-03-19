@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="main-content">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Users</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr *ngFor="let item of items; let i = index" class="post">
+          <app-hacker-news-item class="item-block" [item] = "item" [i]="i"></app-hacker-news-item>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </body>
+</html>
