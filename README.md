@@ -1,4 +1,5 @@
-# MUSEings web
+# MUSEings-web-app
+
 
 #TOP 5 PRIZE FOR RUHACKS 2017
 
