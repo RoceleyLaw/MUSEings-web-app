@@ -1,7 +1,7 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="container">
     <div style="display: block;">
-    <canvas baseChart width="400" height="400"
+    <canvas baseChart
                 [(datasets)]="lineChartData"
                 [(labels)]="lineChartLabels"
                 [options]="lineChartOptions"
@@ -10,7 +10,9 @@
                 [chartType]="lineChartType"></canvas>
     </div>
   </div>
-  <div class="col-md-6" style="margin-bottom: 10px">
+</div>
+<div class="row">
+  <div class="container">
     <table class="table table-responsive table-condensed">
       <tr>
         <th *ngFor="let label of lineChartLabels">{{label}}</th>
@@ -19,7 +21,7 @@
         <td *ngFor="let label of lineChartLabels; let j=index">{{d && d.data[j]}}</td>
       </tr>
     </table>
-    <div class="userinfo">
-    </div>
+  </div>
+  <div class="userinfo">
   </div>
 </div>

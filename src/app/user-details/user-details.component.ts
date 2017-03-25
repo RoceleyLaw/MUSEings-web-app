@@ -14,7 +14,7 @@ export class UserDetailsComponent implements OnInit {
   public lineChartData: Array<any> = [
       {data: [], label: ''},
     ];
-  public lineChartLabels:Array<any> = ['1', '2', '3', '4', '5', '6', '7'];
+  public lineChartLabels:Array<any> = ['none'];
   public lineChartOptions:any = {
     responsive: true
   };
@@ -58,11 +58,22 @@ export class UserDetailsComponent implements OnInit {
       () => {
         this.mapData();
         this.lineChartData = [{ data: this.data, label: 'Your Brain Activity'}];
+        this.labelData();
       }
     )
   }
 
   private mapData (): void {
     this.data = this.item.data.split(',').map(Number);
+  }
+
+  private labelData (): void {
+    if(this.data.length > 0){
+    this.lineChartLabels.length = this.data.length; }
+    let index = 0;
+    for(let dataPt of this.data){
+      this.lineChartLabels[index] = String(index);
+      index++;
+    }
   }
 }

@@ -11,6 +11,7 @@ import { HackerNewsItemComponent } from './hacker-news-item/hacker-news-item.com
 import { HackerNewsApiService } from './hacker-news-api.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ChartsModule } from 'ng2-charts';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChartsModule } from 'ng2-charts';
     SplashPageComponent,
     HackerNewsPageComponent,
     HackerNewsItemComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

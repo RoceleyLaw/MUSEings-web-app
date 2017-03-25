@@ -5,7 +5,10 @@
     <title></title>
   </head>
   <body>
-    <div class="main-content">
+    <div class="loading-spinner" *ngIf="items == undefined">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="main-content" *ngIf="items != undefined">
       <table class="table">
         <thead>
           <tr>
@@ -13,7 +16,7 @@
           </tr>
         </thead>
       <tbody>
-        <tr *ngFor="let item of items; let i = index" class="post">
+        <tr *ngFor="let item of items; let i = index" class="post list-group-item">
           <app-hacker-news-item class="item-block" [item] = "item" [i]="i"></app-hacker-news-item>
         </tr>
       </tbody>
