@@ -3,7 +3,6 @@ import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-
 @Injectable()
 export class HackerNewsApiService {
   baseUrl: string;
@@ -16,12 +15,12 @@ export class HackerNewsApiService {
     this.headers.append('Accept', 'application/json');
    }
 
-   fetchStories(): Observable<any> {
+  fetchStories(): Observable<any> {
     return this.http.get(`${this.baseUrl}/users`, {headers: this.headers})
                     .map(response => response.json());
                   }
 
-  fetchItem(id: number): Observable<any> {
+  fetchItem(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/users/${id}`)
                   .map(response => response.json());
                 }
