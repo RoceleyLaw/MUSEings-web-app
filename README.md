@@ -7,7 +7,7 @@ MUSEings web + Android + RESTful API is a project that helps MUSE Meditation Hea
 
 ![alt tag](./assets/463164213.jpg =10x20)
 ![alt tag](./assets/592838244.jpg =10)
-![alt tag](https://raw.githubusercontent.com/roceleylaw/MUSEings-web-app/master/assets/1826857560.jpg)
+![alt tag](https://raw.githubusercontent.com/roceleylaw/MUSEings-web-app/master/assets/1826857560.jpg =10*20)
 
 
 MUSEings web is a angular 2 project generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
