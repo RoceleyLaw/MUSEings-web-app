@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="loading-spinner" *ngIf="items == undefined">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div class="main-content" *ngIf="items != undefined">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Users</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr *ngFor="let item of items; let i = index" class="post list-group-item">
+          <app-user-item class="item-block" [item] = "item" [i]="i"></app-user-item>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </body>
+</html>

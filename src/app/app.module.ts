@@ -5,20 +5,22 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
-import { HackerNewsPageComponent } from './hacker-news-page/hacker-news-page.component';
-import { HackerNewsItemComponent } from './hacker-news-item/hacker-news-item.component';
+import { UserDashboard } from './user-dashboard/user-dashboard';
+import { UserItem } from './user-item/user-item';
 
-import { HackerNewsApiService } from './hacker-news-api.service';
+import { UserService } from './user.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ChartsModule } from 'ng2-charts';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SplashPageComponent,
-    HackerNewsPageComponent,
-    HackerNewsItemComponent,
-    UserDetailsComponent
+    UserDashboard,
+    UserItem,
+    UserDetailsComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -37,15 +39,15 @@ import { ChartsModule } from 'ng2-charts';
       },
       {
         path:'users',
-        component: HackerNewsPageComponent
+        component: UserDashboard
       },
       {
-        path:'item/:id',
+        path:'user-item/:id',
         component: UserDetailsComponent
       },
     ])
   ],
-  providers: [HackerNewsApiService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
