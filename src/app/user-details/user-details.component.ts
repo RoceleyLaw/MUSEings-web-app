@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { ActivatedRoute } from '@angular/router';
-import { HackerNewsApiService } from '../hacker-news-api.service';
-
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-details',
@@ -11,11 +10,11 @@ import { HackerNewsApiService } from '../hacker-news-api.service';
 })
 export class UserDetailsComponent implements OnInit {
 
-   //public lineChartData: Array<any>;
+  // Initialize settings for the chart
   public lineChartData: Array<any> = [
-      {data: [0.2, 0.5, 0.7, 0.1, 0.3, 0.8, 0.34], label: 'Your Brain Activity'},
+      {data: [], label: ''},
     ];
-  public lineChartLabels:Array<any> = ['1', '2', '3', '4', '5', '6', '7'];
+  public lineChartLabels:Array<any> = ['none'];
   public lineChartOptions:any = {
     responsive: true
   };
@@ -33,66 +32,48 @@ export class UserDetailsComponent implements OnInit {
   public lineChartType: string = 'line';
   public array: Array<number>;
 
-  //data-related
-  public items: any;
+  //Initialize data-related fields
+  public item: any;
   public sub: any;
   public data: any;
+  public id: string;
 
-  constructor(private _hackerNewsAPIService: HackerNewsApiService, private route: ActivatedRoute) {
+  constructor(private _userService: UserService, private route: ActivatedRoute,
+  private router: Router) {
     this.array = new Array<number>();
-    //this.lineChartData = new Array<any>();
+    this.sub = this.route.params.subscribe(params => {
+         this.id = params["id"];},
+       error => {console.log(error);});
   }
 
   ngOnInit() {
-    this._hackerNewsAPIService.fetchStories()
+    this.getUser();
+  }
+
+  private getUser (): void {
+    this._userService.fetchItem(this.id)
           .subscribe(
-      items => this.items = items,
-      error => console.log('Error fetching users!'),
+      item => this.item = item,
+      error => console.log('Error fetching user item!'),
       () => {
-        this.matchData();
-        console.log(this.data);
-        this.lineChartData = [{ data:this.data, label: 'Your Brain Activity'}];
+        this.mapData();
+        this.lineChartData = [{ data: this.data, label: 'Your Brain Activity'}];
+        this.labelData();
       }
     )
   }
 
-  public matchData (): void {
-    this.sub = this.route.params.subscribe(params => {
-      let itemID = +params['id'];
-      console.log("this is id" + itemID);
-    });
-    let url = window.location.href.split('/')[4];
-    console.log(url);
-    for(let i of this.items) {
-      console.log("I DONT GOT YOU" + i.id);
-      if(i._id === url){
-        console.log("I GOT YOU" + i.id);
-        this.array = i.data.split(',').map(Number);
-        console.log(this.array);
-        this.data = this.array;
-      }
+  private mapData (): void {
+    this.data = this.item.data.split(',').map(Number);
+  }
+
+  private labelData (): void {
+    if(this.data.length > 0){
+    this.lineChartLabels.length = this.data.length; }
+    let index = 0;
+    for(let dataPt of this.data){
+      this.lineChartLabels[index] = String(index);
+      index++;
     }
-    console.log(this.data);
-    //this.lineChartData = [{ data: this.data, label: 'Your Brain Activity'}];
-  }
-
-  public click(): void {
-    //this.lineChartData = [{ data:this.array, label: 'Your Brain Activity'}];
-    let _lineChartData:Array<any> = new Array(this.lineChartData.length);
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
-      }
-    }
-    this.lineChartData = _lineChartData;
-  }
-
-  public chartClicked(e:any):void {
-    console.log(e);
-  }
-
-  public chartHovered(e:any):void {
-    console.log(e);
   }
 }

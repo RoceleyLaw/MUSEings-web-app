@@ -11,15 +11,22 @@ body {
 }
 
 .navbar-inverse {
-    background-color: RGBA(157, 145, 138, 1.00) !important;
-    border-color: #080808;
-    color: white !important;
-    height: 100%;
+    background-color: RGBA(157, 145, 138, 1.00);
+    color: white;
     overflow: scroll;
+    border-color: transparent;
 }
 
-.navbar-inverse .navbar-brand {
-    color: white;
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: RGBA(255, 255, 255, 0.30);
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: transparent;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: transparent;
 }
 
 .navbar-inverse .navbar-nav>li>a {

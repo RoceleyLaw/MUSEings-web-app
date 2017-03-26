@@ -1,26 +1,26 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
-import { HackerNewsApiService } from '../hacker-news-api.service';
+import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-hacker-news-item',
-  templateUrl: './hacker-news-item.component.html',
+  selector: 'app-user-item',
+  templateUrl: './user-item.html',
   providers:[],
-  styleUrls: ['./hacker-news-item.component.css']
+  styleUrls: ['./user-item.css']
 })
-export class HackerNewsItemComponent implements OnInit {
+export class UserItem implements OnInit {
   @Input() item: any;
   @Input() i: number;
 
-  constructor(private _hackerNewsAPIService: HackerNewsApiService) {
+  constructor(private _userService: UserService) {
     }
 
   public ngOnInit () {
   }
 
   public deleteUser(): void {
-    this._hackerNewsAPIService.deleteItemById(this.item._id)
+    this._userService.deleteItemById(this.item._id)
       .subscribe((response: Response) => {
                console.log('Item deleted!');
                console.log(this.item);
