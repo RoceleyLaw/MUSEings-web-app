@@ -5,7 +5,7 @@
 
 MUSEings web + Android + RESTful API is a project that helps MUSE Meditation Headband clients to keep track of their emotional changesover time. It is built for RUhacks 2017
 
-![alt tag](https://raw.githubusercontent.com/roceleylaw/MUSEings-web-app/master/assets/463164213.jpg)
+![alt tag](https://raw.githubusercontent.com/roceleylaw/MUSEings-web-app/master/assets/463164213.jpg =100x20 )
 ![alt tag](https://raw.githubusercontent.com/roceleylaw/MUSEings-web-app/master/assets/592838244.jpg)
 ![alt tag](https://raw.githubusercontent.com/roceleylaw/MUSEings-web-app/master/assets/1826857560.jpg)
 
