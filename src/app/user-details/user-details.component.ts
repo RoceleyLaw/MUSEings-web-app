@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { HackerNewsApiService } from '../hacker-news-api.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-details',
@@ -38,7 +38,7 @@ export class UserDetailsComponent implements OnInit {
   public data: any;
   public id: string;
 
-  constructor(private _hackerNewsAPIService: HackerNewsApiService, private route: ActivatedRoute,
+  constructor(private _userService: UserService, private route: ActivatedRoute,
   private router: Router) {
     this.array = new Array<number>();
     this.sub = this.route.params.subscribe(params => {
@@ -51,7 +51,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   private getUser (): void {
-    this._hackerNewsAPIService.fetchItem(this.id)
+    this._userService.fetchItem(this.id)
           .subscribe(
       item => this.item = item,
       error => console.log('Error fetching user item!'),

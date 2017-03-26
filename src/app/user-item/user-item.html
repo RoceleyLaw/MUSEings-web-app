@@ -4,12 +4,12 @@
 <div *ngIf="item">
   <div class="item-laptop">
   <td>
-    <p  [routerLink]="['/item', item._id]">
+    <p  [routerLink]="['/user-item', item._id]">
       No.{{i}}
     </p>
     <div class="subtext-laptop">
       <p>
-        <a class="title" [routerLink]="['/item', item._id]">
+        <a class="title" [routerLink]="['/user-item', item._id]">
           {{item.username}}
         </a>
       </p>

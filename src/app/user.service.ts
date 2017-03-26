@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class HackerNewsApiService {
+export class UserService {
   baseUrl: string;
   headers: Headers;
 
