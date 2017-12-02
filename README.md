@@ -2,6 +2,7 @@
 
 
 #TOP 5 PRIZE FOR RUHACKS 2017
+https://github.com/RoceleyLaw/MUSEings-web-app.git
 
 MUSEings web + Android + RESTful API is a project that helps MUSE Meditation Headband clients to keep track of their emotional changesover time. It is built for RUhacks 2017
 
